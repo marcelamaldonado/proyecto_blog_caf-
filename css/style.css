@@ -54,7 +54,18 @@ img {
 .no_margin{
     margin: 0;
 }
-  
+/** grid **/
+/** para que la imagen y el texto se posicionen uno al lado del otro **/ 
+
+@media (min-width: 768px) { 
+    .grid {
+        display: flex;
+        justify-content: space-between;
+    }
+    .columnas-6 {
+        flex: 0 0 calc(50% - 1rem);
+    }
+}
   /*=====  End of UTILIDADES  ======*/
   
   
@@ -128,6 +139,8 @@ height: 60rem;
      text-align: center;
      display: block;
      font-size: 1.8rem;
+     color: #ffffff;
+     text-decoration: none;
  }
 @media (min-width: 768px) {
     .navegacion a {
@@ -222,7 +235,39 @@ order: 2;
   }
   /*=====  End of CURSOS SIDEBAR  ======*/
   
-  
+
+/*=============================================
+=            FOOTER            =
+=============================================*/
+.site_footer {
+    background-color: black;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+.site_footer p {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: 400;
+    font-family: 'PT Sans' sans-serif;
+    text-align: center;
+}
+.site_footer p span {
+    font-weight: 700;
+    text-shadow: #ffffff;
+}
+.site_footer .firma p {
+   margin: 2rem 0 0 0;
+   text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+   color: white;
+   font: 1.3rem Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
+}
+@media (min-width: 768px) {
+    .firma p {
+        text-align: right;
+    }
+}
+/*=====  End of FOOTER  ======*/
+
 
 
 
