@@ -62,9 +62,13 @@ img {
     .grid {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap; /** para que los elementos se posicionen debajo **/
+    }
+    .centrar_columnas {
+        justify-content: center;
     }
     .columnas-4 {
-flex: 0 0 calc(33.3% - 1rem);
+    flex: 0 0 calc(33.3% - 1rem);
     }
     .columnas-6 {
         flex: 0 0 calc(50% - 1rem);
@@ -72,7 +76,12 @@ flex: 0 0 calc(33.3% - 1rem);
 }
     .columnas-8 {
         flex: 0 0 calc(66.6% - 1rem);
-
+    }
+    .columnas-10 {
+        flex: 0 0 calc(83.3% - 1rem)
+    }
+    .columnas-12 {
+        flex: 0 0 100%;
     }
   /*=====  End of UTILIDADES  ======*/
   
@@ -91,10 +100,15 @@ font-family: 'PT Sans', sans-serif;
 font-weight: 700;
 text-transform: uppercase;
 font-size: 2rem;
+flex: 0 0 100%; /** esto permite que el hijo crezca **/
+}
+.btn:hover {
+    cursor: pointer;
 }
 @media (min-width: 768px) {
     .btn{
-     display: inline-block;   
+     display: inline-block;
+     flex: 0 0 auto; /** el boton crece y ocupa todo el espacio **/   
     }
 }
 .btn_primario {
@@ -252,6 +266,42 @@ order: 2;
   }
   /*=====  End of CURSOS SIDEBAR  ======*/
   
+
+/*=============================================
+=            CONTACTO            =
+=============================================*/
+.formulario_contacto {
+    background-color: #ffffff;
+    padding: 5rem;
+}
+@media (min-width: 768px) {
+    .formulario_contacto {
+        margin-top: -10rem;
+    }
+}
+.formulario_contacto .campo { /** para q se coloquen el label por un lado y el input para el otro **/
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.formulario_contacto .campo label {
+    flex: 0 0 8rem;
+}
+.formulario_contacto .campo input:not([type="submit"]),
+.formulario_contacto textarea {
+    flex: 1rem; /** tome todo el espacio disponible **/
+    border: 1px solid #e1e1e1;
+    padding: 1rem;
+}
+.formulario_contacto textarea {
+    height: 20rem;
+}
+.formulario_contacto .enviar {
+    display: flex;
+    justify-content: flex-end;
+}
+/*=====  End of CONTACTO  ======*/
+
 
 /*=============================================
 =            FOOTER            =
